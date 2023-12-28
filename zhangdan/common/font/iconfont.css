@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4383277 */
+  src: url('./static/font/iconfont.woff2?t=1703233989947') format('woff2'),
+       url('./static/font/iconfont.woff?t=1703233989947') format('woff'),
+       url('./static/font/iconfont.ttf?t=1703233989947') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon_donate:before {
+  content: "\e77d";
+}
+
+.icon-icon_tour:before {
+  content: "\e77e";
+}
+
+.icon-icon_intrest:before {
+  content: "\e772";
+}
+
+.icon-icon_entertainment:before {
+  content: "\e773";
+}
+
+.icon-icon_other:before {
+  content: "\e774";
+}
+
+.icon-icon_medicine:before {
+  content: "\e775";
+}
+
+.icon-icon_salary:before {
+  content: "\e776";
+}
+
+.icon-icon_makeup:before {
+  content: "\e777";
+}
+
+.icon-icon_shopping:before {
+  content: "\e778";
+}
+
+.icon-icon_study:before {
+  content: "\e779";
+}
+
+.icon-icon_phone:before {
+  content: "\e77a";
+}
+
+.icon-icon_traffic:before {
+  content: "\e77b";
+}
+
+.icon-icon_investment:before {
+  content: "\e77c";
+}
+
+.icon-icon_daily:before {
+  content: "\e76f";
+}
+
+.icon-icon_food:before {
+  content: "\e770";
+}
+
+.icon-icon_houserent:before {
+  content: "\e771";
+}
+
+.icon-jiantou-zuo:before {
+  content: "\e631";
+}
+
