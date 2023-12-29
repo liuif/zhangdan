@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.edu.zjut.po.Bill" table="bill" catalog="zhangdan">
+        <id name="billId" type="int">
+            <column name="bill_id"/>
+            <generator class="increment"/>
+            <!--            <generator class="increment"/>-->
+        </id>
+        <many-to-one name="ledger" class="cn.edu.zjut.po.Ledger" cascade="save-update">
+            <column name="ledger_id" not-null="true"/>
+        </many-to-one>
+        <property name="money" type="java.lang.Float">
+            <column name="money"/>
+        </property>
+        <many-to-one name="expenseType" class="cn.edu.zjut.po.ExpenseType" cascade="save-update">
+            <column name="expense_type_id" not-null="true"/>
+        </many-to-one>
+        <property name="incomeOrExpense" type="java.lang.String">
+            <column name="income_or_expense" length="10"/>
+        </property>
+        <property name="note" type="java.lang.String">
+            <column name="note"/>
+        </property>
+        <property name="billCreateDate" type="java.time.LocalDateTime">
+            <column name="bill_create_date"/>
+        </property>
+    </class>
+</hibernate-mapping>

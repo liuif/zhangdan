@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.edu.zjut.po.ExpenseType" table="expense_type" catalog="zhangdan">
+        <id name="typeId" type="int">
+            <column name="type_id"/>
+            <generator class="increment"/>
+        </id>
+        <property name="typeName" type="java.lang.String">
+            <column name="type_name" length="20"/>
+        </property>
+        <set name="bills" inverse="true" cascade="all" >
+            <key column="bill_id" not-null="true"/>
+            <one-to-many class="cn.edu.zjut.po.Bill"/>
+        </set>
+    </class>
+</hibernate-mapping>

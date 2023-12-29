@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.edu.zjut.po.Ledger" table="ledger" catalog="zhangdan">
+        <id name="ledgerId" type="int">
+            <column name="ledger_id"/>
+            <generator class="increment"/>
+        </id>
+        <property name="ledgerName" type="string">
+            <column name="ledger_name" length="255"/>
+        </property>
+        <property name="ledgerCreateDate" type="java.time.LocalDateTime">
+            <column name="ledger_create_date"/>
+        </property>
+        <many-to-one name="user" class="cn.edu.zjut.po.User" cascade="save-update">
+            <column name="user_email" not-null="true"/>
+        </many-to-one>
+        <set name="bills" inverse="true" cascade="all" >
+            <key column="bill_id" not-null="true"/>
+            <one-to-many class="cn.edu.zjut.po.Bill"/>
+        </set>
+    </class>
+</hibernate-mapping>
