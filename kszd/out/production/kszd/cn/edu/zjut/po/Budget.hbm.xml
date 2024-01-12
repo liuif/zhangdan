@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.edu.zjut.po.Budget" table="budget" catalog="zhangdan">
+        <composite-id>
+            <key-many-to-one name="ledger" class="cn.edu.zjut.po.Ledger">
+                <column name="ledger_id" not-null="true"/>
+            </key-many-to-one>
+            <key-many-to-one name="userexpensetype" class="cn.edu.zjut.po.UserExpenseType">
+                <column name="type_id" not-null="true"/>
+            </key-many-to-one>
+            <key-property name="period" type="java.time.LocalDateTime">
+                <column name="period" length="20" />
+            </key-property>
+        </composite-id>
+        <property name="budget" type="double">
+            <column name="budget" length="20" />
+        </property>
+        <property name="currentbudget" type="double">
+            <column name="current_budget" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

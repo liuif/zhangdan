@@ -7,9 +7,14 @@
 				<button class="login-button" @click="login">登录</button>
 			</view>
 		</view>
-		<router-link class="register" to="pages/login/register">
-			<text class="word">没有账号？立即注册！</text>
-		</router-link>
+		<view class="register">
+			<router-link to="/pages/login/register">
+				<text class="word">没有账号？立即注册！</text>
+			</router-link>
+			<router-link to="/pages/login/findpassword">
+				<text class="word">忘记密码？找回密码！</text>
+			</router-link>
+		</view>
 	</view>
 </template>
 
@@ -63,20 +68,24 @@
 	}
 
 	.register {
-		display: flex; 
-		justify-content: center; 
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
 		align-items: center;
-		margin-top: 100px; 
+		margin-top: 80px;
 		background-color: white;
 		position: relative;
 		text-decoration: none;
 	}
-	.word{
+
+	.word {
 		display: flex;
-		justify-content: center; 
+		justify-content: center;
 		color: gray;
 		text-decoration: none;
+		padding-top: 5px;
 	}
+
 	.word:hover {
 		color: black;
 		cursor: pointer;
@@ -84,8 +93,10 @@
 </style>
 
 <script>
-	import { mapActions } from 'vuex';
-	
+	import {
+		mapActions
+	} from 'vuex';
+
 	export default {
 		data() {
 			return {
@@ -107,7 +118,10 @@
 					header: {
 						'Content-Type': 'application/json'
 					},
-					data
+					data:{
+						email: this.email,
+						password: this.password,
+					}
 				}).then((res) => {
 					const result = res[1].data;
 					console.log(res[1].data);
@@ -124,12 +138,13 @@
 							title: '登录成功',
 							icon: 'success'
 						});
-						
+
 						//this.setUser(result.data);
 						// 将用户信息存储在本地，以备后续使用
 						uni.setStorageSync('name', result.data.username);
 						uni.setStorageSync('email', result.data.email);
 						uni.setStorageSync('password', result.data.password);
+						uni.setStorageSync('ledger', -1);
 
 						// 登录成功，跳转至主页
 						uni.switchTab({

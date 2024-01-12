@@ -1,4 +1,5 @@
 module.exports = {
+	transpileDependencies: ['uview-ui'],
   devServer: {
     proxy: {
       '/api': {

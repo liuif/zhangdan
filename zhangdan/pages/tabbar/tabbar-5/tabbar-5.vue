@@ -15,15 +15,17 @@
 		<router-link class="menu-item" to="/pages/tabbar/tabbar-4/tabbar-4">
 			<text>账单报告</text>
 		</router-link>
-		<router-link class="menu-item" to="/pages/tabbar/tabbar-5/tabbar-5">
+		<router-link class="menu-item" to="/pages/budget/ledgerBudget/ledgerBudget">
 			<text>预算设置</text>
 		</router-link>
-		<router-link class="menu-item" to="/pages/tabbar/tabbar-5/tabbar-5">
-			<text>标签</text>
-		</router-link>
-		<router-link class="menu-item" to="/pages/tabbar/tabbar-5/tabbar-5">
+		<router-link class="menu-item" to="/pages/property/property">
 			<text>我的资产</text>
-
+		</router-link>
+		<router-link class="menu-item" to="/pages/share/share">
+			<text>共享申请</text>
+		</router-link>
+		<router-link class="menu-item" to="/pages/login/update_password">
+			<text>修改密码</text>
 		</router-link>
 		<view class="asset-info">
 			<text>总资产 </text>
@@ -46,13 +48,44 @@
 <script>
 	export default {
 		data() {
-		    return {
-		      avatarUrl: '/static/img/touxiang.jpg',
-		      totalAsset: "1000",
-		      totalDebt: "500",
-			  username:uni.getStorageSync('name')
-		    }
-		  }
+			return {
+				avatarUrl: '/static/img/touxiang.jpg',
+				totalAsset: "1000",
+				totalDebt: "100",
+				username: uni.getStorageSync('name')
+			}
+		},
+		methods: {
+			getTotalBalance() {
+				uni.request({
+					url: '/api/getTotalBalance',
+					method: 'POST',
+					data: {
+						email: uni.getStorageSync('email'),
+					},
+					success: (res) => {
+						console.log(res);
+						if (res.statusCode === 200) {
+							this.totalAsset = res.data.data;
+						} else {
+							uni.showToast({
+								title: '获取资金，请稍后重试',
+								icon: 'none'
+							})
+						}
+					},
+					fail: () => {
+						uni.showToast({
+							title: '网络异常，请稍后重试',
+							icon: 'none'
+						})
+					}
+				})
+			}
+		 },
+		mounted() {
+			this.getTotalBalance()
+		},
 	}
 </script>
 

@@ -21,5 +21,9 @@
         <mapping resource="cn/edu/zjut/po/Ledger.hbm.xml" />
         <mapping resource="cn/edu/zjut/po/Bill.hbm.xml" />
         <mapping resource="cn/edu/zjut/po/ExpenseType.hbm.xml" />
+        <mapping resource="cn/edu/zjut/po/UserExpenseType.hbm.xml"/>
+        <mapping resource="cn/edu/zjut/po/Budget.hbm.xml"/>
+        <mapping resource="cn/edu/zjut/po/Property.hbm.xml"/>
+        <mapping resource="cn/edu/zjut/po/Shared.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

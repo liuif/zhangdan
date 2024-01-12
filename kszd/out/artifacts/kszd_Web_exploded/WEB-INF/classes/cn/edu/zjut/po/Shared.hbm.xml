@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.edu.zjut.po.Shared" table="shared_ledger" catalog="zhangdan">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="increment"/>
+        </id>
+        <many-to-one name="ledger" class="cn.edu.zjut.po.Ledger">
+            <column name="ledger_id" not-null="true"/>
+        </many-to-one>
+        <many-to-one name="user" class="cn.edu.zjut.po.User">
+            <column name="user_email" not-null="true"/>
+        </many-to-one>
+        <property name="allowed" type="int">
+            <column name="allowed"/>
+        </property>
+    </class>
+</hibernate-mapping>

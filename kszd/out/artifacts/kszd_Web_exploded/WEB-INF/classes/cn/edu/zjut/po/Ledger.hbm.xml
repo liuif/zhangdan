@@ -20,5 +20,14 @@
             <key column="bill_id" not-null="true"/>
             <one-to-many class="cn.edu.zjut.po.Bill"/>
         </set>
+        <property name="invitation" type="string">
+            <column name="invitation" length="255"/>
+        </property>
+        <property name="budget" type="double">
+            <column name="budget"/>
+        </property>
+        <property name="current_budget" type="double">
+            <column name="current_budget"/>
+        </property>
     </class>
 </hibernate-mapping>

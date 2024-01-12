@@ -11,10 +11,10 @@
         <many-to-one name="ledger" class="cn.edu.zjut.po.Ledger" cascade="save-update">
             <column name="ledger_id" not-null="true"/>
         </many-to-one>
-        <property name="money" type="java.lang.Float">
+        <property name="money" type="java.lang.Double">
             <column name="money"/>
         </property>
-        <many-to-one name="expenseType" class="cn.edu.zjut.po.ExpenseType" cascade="save-update">
+        <many-to-one name="userexpensetype" class="cn.edu.zjut.po.UserExpenseType" cascade="save-update">
             <column name="expense_type_id" not-null="true"/>
         </many-to-one>
         <property name="incomeOrExpense" type="java.lang.String">
@@ -26,5 +26,8 @@
         <property name="billCreateDate" type="java.time.LocalDateTime">
             <column name="bill_create_date"/>
         </property>
+        <many-to-one name="user" class="cn.edu.zjut.po.User" cascade="save-update">
+            <column name="user_email" not-null="true"/>
+        </many-to-one>
     </class>
 </hibernate-mapping>

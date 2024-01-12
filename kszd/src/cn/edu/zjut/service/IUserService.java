@@ -7,7 +7,7 @@ import cn.edu.zjut.po.User;
  */
 public interface IUserService {
     public boolean login(User loginUser);
-    public String getname(String email);
     public boolean register(User loginUser);
+    public boolean updatePassword (User user);
 
 }

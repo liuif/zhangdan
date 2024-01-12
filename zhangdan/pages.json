@@ -1,45 +1,140 @@
 {
+	"easycom": {
+			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+		},
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/login/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "登录"
 			}
 		},
 		{
 			"path": "pages/login/register",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/login/update_password",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		},
+		{
+			"path": "pages/login/findpassword",
+			"style": {
+				"navigationBarTitleText": "找回密码"
+			}
+		},
+		{
+			"path": "pages/login/Code",
+			"style": {
+				"navigationBarTitleText": "找回密码"
+			}
+		},
+		{
+			"path": "pages/login/newpassword",
+			"style": {
+				"navigationBarTitleText": "找回密码"
 			}
 		},
 		{
 			"path": "pages/tabbar/tabbar-1/tabbar-1",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-3/update",
+			"style": {
+				"navigationBarTitleText": "修改"
 			}
 		},
 		{
 			"path": "pages/classify/expensetype",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "消费类型"
 			}
 		},
 		{
 			"path": "pages/tabbar/tabbar-2/tabbar-2",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "我的账本"
+			}
 		},
 		{
 			"path": "pages/tabbar/tabbar-3/tabbar-3",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "添加"
+			}
 		},
 		{
 			"path": "pages/tabbar/tabbar-4/tabbar-4",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": "统计"
+			}
 		},
 		{
 			"path": "pages/tabbar/tabbar-5/tabbar-5",
-			"style": {}
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/property/property",
+			"style": {
+				"navigationBarTitleText": "资金账户"
+			}
+		},
+		{
+			"path": "pages/budget/setBudget/setBudget",
+			"style": {
+				"navigationBarTitleText": "设置预算"
+			}
+		},
+		{
+			"path": "pages/budget/ledgerBudget/ledgerBudget",
+			"style": {
+				"navigationBarTitleText": "预算"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/test",
+			"style": {
+				"navigationBarTitleText": "统计"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/page2",
+			"style": {
+				"navigationBarTitleText": "统计"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/page4",
+			"style": {
+				"navigationBarTitleText": "统计"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/charts1",
+			"style": {
+				"navigationBarTitleText": "统计"
+			}
+		},
+		{
+			"path": "pages/tabbar/tabbar-4/charts2",
+			"style": {
+				"navigationBarTitleText": "统计"
+			}
+		},
+		{
+			"path": "pages/share/share",
+			"style": {
+				"navigationBarTitleText": "共享申请"
+			}
 		}
 	],
 	"globalStyle": {

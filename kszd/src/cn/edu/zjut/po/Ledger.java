@@ -56,6 +56,34 @@ public class Ledger implements java.io.Serializable{
     private User user;
     private Set<Bill> bills = new HashSet<>();
 
+    private String invitation;
+    private double budget;
+    private double current_budget;
+
+    public void setCurrent_budget(double current_budget) {
+        this.current_budget = current_budget;
+    }
+
+    public double getCurrent_budget() {
+        return current_budget;
+    }
+
+    public void setBudget(double budget) {
+        this.budget = budget;
+    }
+
+    public void setInvitation(String invitation) {
+        this.invitation = invitation;
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+
+    public String getInvitation() {
+        return invitation;
+    }
+
     public Ledger() {}
 
     public Ledger(int ledgerId, String ledgerName, String ledgerCreateDate, User user) {

@@ -3,6 +3,9 @@ package cn.edu.zjut.po;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * @author 13259
+ */
 public class User implements java.io.Serializable{
     public String getEmail() {
         return email;

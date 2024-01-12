@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD
+3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.edu.zjut.po.Property" table="property" catalog="zhangdan">
+        <id name="property_id" type="int">
+            <column name="property_id" />
+            <generator class="increment"/>
+        </id>
+        <many-to-one name="user" class="cn.edu.zjut.po.User" cascade="save-update">
+            <column name="user_email" not-null="true"/>
+        </many-to-one>
+        <property name="property_name" type="string">
+            <column name="property_name" length="20" />
+        </property>
+        <property name="property_balance" type="double">
+            <column name="property_balance" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -13,16 +13,6 @@
 			<input class="add-type-input" placeholder="请输入消费类型" v-model="newType">
 			<view class="add-type-btn" @tap="addType">添加</view>
 		</view>
-		<Calculator v-if="showCalculator" @cancel='cancelBtn' @finish='finishBtn' >
-		
-		cancelBtn() {
-		    this.showCalculator = false
-		},
-		finishBtn(data) {
-		    console.log('返回的数据',data)
-		    this.showCalculator = false
-		}
-		</Calculator>
 	</view>
 </template>
 
@@ -30,17 +20,15 @@
 	import Calculator from '@/components/Calculator.vue'
 	export default {
 		components: {
-		    Calculator
+			Calculator
 		},
-		data() {
-		    return {
-		        showCalculator: true,              
-		    }
-		},
+
 		data() {
 			return {
+				showCalculator: true,
 				newType: '', // 新添加的消费类型
 				types: [], // 消费类型列表
+				email: '',
 			}
 		},
 		methods: {
@@ -49,6 +37,9 @@
 				uni.request({
 					url: '/api/getExpenseType',
 					method: 'POST',
+					data: {
+						email: uni.getStorageSync('email')
+					},
 					success: (res) => {
 						console.log(res);
 						if (res.statusCode === 200) {
@@ -79,7 +70,8 @@
 						url: '/api/addExpenseType',
 						method: 'POST',
 						data: {
-							typename: this.newType
+							typename: this.newType,
+							email: uni.getStorageSync('email')
 						},
 						success: (res) => {
 							console.log(res);
@@ -124,7 +116,8 @@
 								url: '/api/removeExpenseType',
 								method: 'POST',
 								data: {
-									typename: typeId
+									typename: typeId,
+									email: uni.getStorageSync('email')
 								},
 								success: (res) => {
 									console.log(res);
